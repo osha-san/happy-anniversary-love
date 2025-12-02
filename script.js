@@ -140,10 +140,16 @@ requestAnimationFrame(animate);
 animate();
 
 // Countdown Timer - Set to 365 days from today (anniversary is tomorrow)
+//function updateCountdown() {
+//const now = new Date();
+//const nextAnniversary = new Date(now);
+//nextAnniversary.setDate(nextAnniversary.getDate() + 365);
+
 function updateCountdown() {
-const now = new Date();
-const nextAnniversary = new Date(now);
-nextAnniversary.setDate(nextAnniversary.getDate() + 365);
+    // Set your specific anniversary date (YYYY, MM-1, DD)
+    // Note: Months are 0-indexed (0 = January, 11 = December)
+    const nextAnniversary = new Date(2025, 11, 3); // December 3, 2025
+    const now = new Date();
 
 
 const diff = nextAnniversary - now;
