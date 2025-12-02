@@ -1,0 +1,432 @@
+@import url(‘https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap’);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: ‘Press Start 2P’, cursive;
+background: #0a0a2e;
+color: #fff;
+overflow-x: hidden;
+position: relative;
+min-height: 100vh;
+}
+
+canvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+pointer-events: none;
+}
+
+.content {
+position: relative;
+z-index: 2;
+padding: 20px;
+}
+
+.header {
+text-align: center;
+padding: 60px 20px;
+animation: pulse 2s infinite;
+}
+
+h1 {
+font-size: 2em;
+text-shadow: 4px 4px 0 #ff1493, 8px 8px 0 #ff69b4;
+margin-bottom: 20px;
+line-height: 1.5;
+}
+
+.subtitle {
+font-size: 1.2em;
+color: #ff69b4;
+text-shadow: 2px 2px 0 #ff1493;
+margin-top: 20px;
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+
+/* Countdown Timer */
+.countdown-section {
+text-align: center;
+margin: 40px auto;
+padding: 30px;
+background: linear-gradient(135deg, #2d2d5f 0%, #1a1a4e 100%);
+border: 4px solid #ffd700;
+box-shadow: 8px 8px 0 #ff1493;
+max-width: 600px;
+}
+
+.countdown-title {
+font-size: 0.9em;
+color: #ffd700;
+margin-bottom: 20px;
+text-shadow: 2px 2px 0 #ff1493;
+}
+
+.countdown-display {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.countdown-unit {
+background: #1a1a4e;
+border: 3px solid #ff69b4;
+padding: 15px 20px;
+min-width: 100px;
+}
+
+.countdown-number {
+font-size: 1.5em;
+color: #ff1493;
+display: block;
+margin-bottom: 10px;
+}
+
+.countdown-label {
+font-size: 0.5em;
+color: #ffd700;
+}
+
+/* Music Player */
+.music-player {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: linear-gradient(135deg, #1a1a4e 0%, #2d2d5f 100%);
+border: 3px solid #ff69b4;
+padding: 15px;
+z-index: 1000;
+box-shadow: 6px 6px 0 #ff1493;
+}
+
+.music-button {
+background: #ff1493;
+border: none;
+color: #fff;
+padding: 10px 20px;
+font-family: ‘Press Start 2P’, cursive;
+font-size: 0.7em;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.music-button:hover {
+background: #ff69b4;
+transform: scale(1.05);
+}
+
+.music-button:active {
+transform: scale(0.95);
+}
+
+/* Mini Game */
+.game-container {
+max-width: 600px;
+margin: 40px auto;
+padding: 30px;
+background: linear-gradient(135deg, #2d2d5f 0%, #1a1a4e 100%);
+border: 4px solid #ff69b4;
+box-shadow: 8px 8px 0 #ff1493;
+text-align: center;
+}
+
+.game-title {
+font-size: 1em;
+color: #ffd700;
+margin-bottom: 20px;
+text-shadow: 2px 2px 0 #ff1493;
+}
+
+#gameCanvas {
+background: #0a0a2e;
+border: 3px solid #ff69b4;
+display: block;
+margin: 20px auto;
+cursor: crosshair;
+max-width: 100%;
+height: auto;
+touch-action: none;
+}
+
+.game-score {
+font-size: 0.8em;
+color: #ff69b4;
+margin-top: 15px;
+}
+
+.game-instructions {
+font-size: 0.5em;
+color: #ffd700;
+margin-top: 10px;
+line-height: 1.6;
+}
+
+/* Calendar */
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+max-width: 1200px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+.month-card {
+background: linear-gradient(135deg, #1a1a4e 0%, #2d2d5f 100%);
+border: 4px solid #ff69b4;
+padding: 20px;
+transition: transform 0.3s, box-shadow 0.3s;
+box-shadow: 8px 8px 0 #ff1493;
+}
+
+.month-card:hover {
+transform: translate(-4px, -4px);
+box-shadow: 12px 12px 0 #ff1493;
+}
+
+.month-title {
+font-size: 0.85em;
+color: #ffd700;
+margin-bottom: 15px;
+text-align: center;
+text-shadow: 2px 2px 0 #ff1493;
+}
+
+.month-image {
+width: 100%;
+aspect-ratio: 3/2;
+background: linear-gradient(45deg, #2d2d5f, #1a1a4e);
+margin-bottom: 15px;
+position: relative;
+overflow: hidden;
+border: 3px solid #ff69b4;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.month-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.image-placeholder {
+font-size: 0.7em;
+color: rgba(255, 255, 255, 0.3);
+text-align: center;
+padding: 20px;
+}
+
+.month-caption {
+font-size: 0.55em;
+line-height: 1.8;
+color: #fff;
+text-align: center;
+min-height: 60px;
+padding: 10px;
+background: rgba(255, 20, 147, 0.1);
+border: 2px solid rgba(255, 105, 180, 0.3);
+}
+
+/* Message Section */
+.message-section {
+max-width: 800px;
+margin: 60px auto;
+padding: 40px;
+background: linear-gradient(135deg, #2d2d5f 0%, #1a1a4e 100%);
+border: 4px solid #ff69b4;
+box-shadow: 12px 12px 0 #ff1493;
+text-align: center;
+}
+
+.message-section h2 {
+font-size: 1.2em;
+color: #ffd700;
+margin-bottom: 30px;
+text-shadow: 3px 3px 0 #ff1493;
+}
+
+.message-section p {
+font-size: 0.65em;
+line-height: 2.2;
+color: #fff;
+margin-bottom: 25px;
+}
+
+.heart-pixel {
+display: inline-block;
+color: #ff1493;
+animation: heartbeat 1.5s infinite;
+margin: 0 10px;
+}
+
+@keyframes heartbeat {
+0%, 100% { transform: scale(1); }
+25% { transform: scale(1.2); }
+50% { transform: scale(1); }
+}
+
+/* Continue Button */
+.continue-button {
+background: #ff1493;
+border: 3px solid #ff69b4;
+color: #fff;
+padding: 15px 40px;
+font-family: ‘Press Start 2P’, cursive;
+font-size: 0.8em;
+cursor: pointer;
+margin-top: 30px;
+box-shadow: 6px 6px 0 #ffd700;
+transition: all 0.3s;
+}
+
+.continue-button:hover {
+transform: translate(-3px, -3px);
+box-shadow: 9px 9px 0 #ffd700;
+}
+
+.continue-button:active {
+transform: translate(0, 0);
+box-shadow: 3px 3px 0 #ffd700;
+}
+
+.secret-message {
+display: none;
+margin-top: 30px;
+padding: 30px;
+background: rgba(255, 215, 0, 0.1);
+border: 3px solid #ffd700;
+animation: fadeIn 1s;
+}
+
+.secret-message.show {
+display: block;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Easter Egg Notification */
+.easter-egg-notify {
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+background: #ffd700;
+color: #0a0a2e;
+padding: 15px 30px;
+border: 3px solid #ff1493;
+font-size: 0.6em;
+z-index: 2000;
+display: none;
+box-shadow: 6px 6px 0 #ff69b4;
+animation: slideDown 0.5s;
+}
+
+.easter-egg-notify.show {
+display: block;
+}
+
+@keyframes slideDown {
+from { transform: translateX(-50%) translateY(-100px); }
+to { transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 768px) {
+h1 {
+font-size: 1.2em;
+text-shadow: 2px 2px 0 #ff1493, 4px 4px 0 #ff69b4;
+}
+
+.subtitle {
+    font-size: 0.8em;
+}
+
+.calendar-grid {
+    grid-template-columns: 1fr;
+}
+
+.month-card {
+    box-shadow: 4px 4px 0 #ff1493;
+}
+
+.countdown-section {
+    padding: 20px;
+    box-shadow: 4px 4px 0 #ff1493;
+}
+
+.countdown-title {
+    font-size: 0.7em;
+}
+
+.countdown-number {
+    font-size: 1.2em;
+}
+
+.countdown-unit {
+    min-width: 70px;
+    padding: 10px 15px;
+}
+
+.game-container {
+    padding: 20px;
+    box-shadow: 4px 4px 0 #ff1493;
+}
+
+.game-title {
+    font-size: 0.8em;
+}
+
+#gameCanvas {
+    width: 100%;
+    max-width: 100%;
+}
+
+.message-section {
+    padding: 20px;
+    box-shadow: 6px 6px 0 #ff1493;
+}
+
+.message-section h2 {
+    font-size: 0.9em;
+}
+
+.message-section p {
+    font-size: 0.55em;
+}
+
+.continue-button {
+    font-size: 0.6em;
+    padding: 12px 30px;
+}
+
+.music-player {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+.music-button {
+    font-size: 0.5em;
+    padding: 8px 15px;
+}
+
+
+}

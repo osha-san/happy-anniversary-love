@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="stars"></canvas>
+
+```
+<div class="easter-egg-notify" id="easterEggNotify">
+    🎮 KONAMI CODE ACTIVATED! 🎮
+</div>
+
+<div class="content">
+    <div class="header">
+        <h1>HAPPY ANNIVERSARY</h1>
+        <div class="subtitle">HAPPY ANNIVERSARY, LOVE</div>
+    </div>
+    
+    <!-- Countdown Timer -->
+    <div class="countdown-section">
+        <div class="countdown-title">NEXT ANNIVERSARY IN:</div>
+        <div class="countdown-display">
+            <div class="countdown-unit">
+                <span class="countdown-number" id="days">000</span>
+                <span class="countdown-label">DAYS</span>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">HOURS</span>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">MINUTES</span>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">SECONDS</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mini Game -->
+    <div class="game-container">
+        <div class="game-title">CATCH THE HEARTS!</div>
+        <canvas id="gameCanvas" width="500" height="400"></canvas>
+        <div class="game-score">SCORE: <span id="score">0</span> ♥</div>
+        <div class="game-instructions">
+            Tap or click to catch falling hearts!<br>
+            Miss 3 hearts and it's game over!
+        </div>
+    </div>
+    
+    <!-- Calendar Cards -->
+    <div class="calendar-grid">
+        <div class="month-card">
+            <div class="month-title">JANUARY</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/january.jpg" alt="January"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">FEBRUARY</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/february.jpg" alt="February"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">MARCH</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/march.jpg" alt="March"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">APRIL</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/april.jpg" alt="April"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">MAY</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/may.jpg" alt="May"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">JUNE</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/june.jpg" alt="June"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">JULY</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/july.jpg" alt="July"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">AUGUST</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/august.jpg" alt="August"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">SEPTEMBER</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/september.jpg" alt="September"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">OCTOBER</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/october.jpg" alt="October"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">NOVEMBER</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/november.jpg" alt="November"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-title">DECEMBER</div>
+            <div class="month-image">
+                <!-- Replace this div with: <img src="photos/december.jpg" alt="December"> -->
+                <div class="image-placeholder">Add Your Photo Here (3:2 ratio)</div>
+            </div>
+            <div class="month-caption">
+                [Add your special memory caption here]
+            </div>
+        </div>
+    </div>
+    
+    <!-- Message Section -->
+    <div class="message-section">
+        <h2>A YEAR OF LOVE</h2>
+        <p>
+            [Add your heartfelt message here]
+        </p>
+        <p>
+            [Share your favorite memories]
+        </p>
+        <p>
+            <span class="heart-pixel">♥</span>
+            [Express your love]
+            <span class="heart-pixel">♥</span>
+        </p>
+        <p>
+            Forever yours,<br>
+            [Your Name]
+        </p>
+        
+        <button class="continue-button" id="continueBtn">CONTINUE?</button>
+        
+        <div class="secret-message" id="secretMessage">
+            <h2 style="font-size: 1em; color: #ffd700; margin-bottom: 20px;">
+                BONUS LEVEL UNLOCKED!
+            </h2>
+            <p style="font-size: 0.65em; line-height: 2;">
+                [Add your secret message here]<br><br>
+                This could be a special promise, a future plan,<br>
+                or an extra romantic message! ♥
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Music Player -->
+<div class="music-player">
+    <button class="music-button" id="musicToggle">♪ MUSIC</button>
+</div>
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
