@@ -161,6 +161,7 @@ cursor: crosshair;
 max-width: 100%;
 height: auto;
 touch-action: none;
+z-index: 1;
 }
 
 .game-score {
