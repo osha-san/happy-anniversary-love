@@ -47,12 +47,21 @@
     <!-- Mini Game -->
     <div class="game-container">
         <div class="game-title">CATCH THE HEARTS!</div>
-        <canvas id="gameCanvas" width="500" height="400"></canvas>
-        <div class="game-score">SCORE: <span id="score">0</span> ♥
-
-    <div class="game-instructions">
-        Tap or click to catch falling hearts!<br>
-        Miss 3 hearts and it's game over!
+        <div class="game-start-screen" id="gameStartScreen">
+            <div class="game-instructions">
+                Tap or click to catch falling hearts!<br>
+                Miss 3 hearts and it's game over!
+            </div>
+            <button class="play-game-button" id="playGameBtn">PLAY GAME</button>
+        </div>
+        <div class="game-play-screen" id="gamePlayScreen" style="display: none;">
+            <canvas id="gameCanvas" width="500" height="400"></canvas>
+            <div class="game-score">SCORE: <span id="score">0</span> ♥</div>
+        </div>
+        <div class="game-over-screen" id="gameOverScreen" style="display: none;">
+            <div class="game-over-message">GAME OVER!</div>
+            <div class="game-final-score">FINAL SCORE: <span id="finalScore">0</span> ♥</div>
+            <button class="play-again-button" id="playAgainBtn">TAP TO PLAY AGAIN</button>
         </div>
     </div>
     

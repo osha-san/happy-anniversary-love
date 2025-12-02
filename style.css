@@ -139,9 +139,8 @@ transform: scale(0.95);
 /* Mini Game */
 .game-container {
 max-width: 600px;
-
-/* keep the game in normal document flow directly after the countdown */
 position: relative;
+z-index: 10;
 margin: 10px auto 20px;
 padding: 30px;
 background: linear-gradient(135deg, #2d2d5f 0%, #1a1a4e 100%);
@@ -177,9 +176,71 @@ margin-top: 15px;
 .game-instructions {
 font-size: 0.5em;
 color: #ffd700;
-/* ensure instructions sit below the canvas and score */
 margin-top: 12px;
 line-height: 1.6;
+}
+
+.game-start-screen {
+padding: 20px;
+min-height: 200px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.game-play-screen {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.game-over-screen {
+padding: 20px;
+min-height: 200px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+
+.game-over-message {
+font-size: 1.2em;
+color: #ff1493;
+text-shadow: 2px 2px 0 #ffd700;
+}
+
+.game-final-score {
+font-size: 0.8em;
+color: #ffd700;
+margin: 10px 0;
+}
+
+.play-game-button,
+.play-again-button {
+background: #ff1493;
+border: 3px solid #ff69b4;
+color: #fff;
+padding: 12px 30px;
+font-family: 'Press Start 2P', cursive;
+font-size: 0.7em;
+cursor: pointer;
+margin-top: 20px;
+box-shadow: 4px 4px 0 #ffd700;
+transition: all 0.3s;
+}
+
+.play-game-button:hover,
+.play-again-button:hover {
+transform: translate(-2px, -2px);
+box-shadow: 6px 6px 0 #ffd700;
+}
+
+.play-game-button:active,
+.play-again-button:active {
+transform: translate(0, 0);
+box-shadow: 2px 2px 0 #ffd700;
 }
 
 /* Calendar */

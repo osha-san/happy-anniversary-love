@@ -173,10 +173,18 @@ updateCountdown();
 // Mini Game - Catch the Hearts (with mobile touch support)
 const gameCanvas = document.getElementById('gameCanvas');
 const gameCtx = gameCanvas.getContext('2d');
+const playGameBtn = document.getElementById('playGameBtn');
+const playAgainBtn = document.getElementById('playAgainBtn');
+const gameStartScreen = document.getElementById('gameStartScreen');
+const gamePlayScreen = document.getElementById('gamePlayScreen');
+const gameOverScreen = document.getElementById('gameOverScreen');
+
 let gameScore = 0;
 let missedHearts = 0;
 let gameHearts = [];
-let gameRunning = true;
+let gameRunning = false;
+let spawnInterval = null;
+let gameAnimationId = null;
 
 class GameHeart {
 constructor() {
@@ -216,7 +224,41 @@ gameHearts.push(new GameHeart());
 }
 }
 
-setInterval(spawnHeart, 1500);
+function startGame() {
+// Reset game state
+gameScore = 0;
+missedHearts = 0;
+gameHearts = [];
+gameRunning = true;
+document.getElementById('score').textContent = '0';
+
+// Show play screen, hide start screen
+gameStartScreen.style.display = 'none';
+gamePlayScreen.style.display = 'flex';
+gameOverScreen.style.display = 'none';
+
+// Start spawning hearts
+spawnInterval = setInterval(spawnHeart, 1500);
+
+// Start game loop
+updateGame();
+}
+
+function endGame() {
+gameRunning = false;
+
+// Clear spawn interval
+clearInterval(spawnInterval);
+
+// Show game over screen
+gamePlayScreen.style.display = 'none';
+gameOverScreen.style.display = 'flex';
+document.getElementById('finalScore').textContent = gameScore;
+}
+
+// Button event listeners
+playGameBtn.addEventListener('click', startGame);
+playAgainBtn.addEventListener('click', startGame);
 
 function updateGame() {
 if (!gameRunning) return;
@@ -234,18 +276,12 @@ gameHearts.forEach((heart, index) => {
         gameHearts.splice(index, 1);
         
         if (missedHearts >= 3) {
-            gameRunning = false;
-            gameCtx.fillStyle = '#ff1493';
-            gameCtx.font = '20px "Press Start 2P"';
-            gameCtx.textAlign = 'center';
-            gameCtx.fillText('GAME OVER!', gameCanvas.width / 2, gameCanvas.height / 2);
-            gameCtx.font = '12px "Press Start 2P"';
-            gameCtx.fillText('Refresh to play again', gameCanvas.width / 2, gameCanvas.height / 2 + 40);
+            endGame();
         }
     }
 });
 
-requestAnimationFrame(updateGame);
+gameAnimationId = requestAnimationFrame(updateGame);
 
 
 }
@@ -287,8 +323,6 @@ gameHearts.forEach((heart, index) => {
 
 gameCanvas.addEventListener('click', handleInteraction);
 gameCanvas.addEventListener('touchstart', handleInteraction, { passive: false });
-
-updateGame();
 
 // 8-bit Music Player
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
