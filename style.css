@@ -387,7 +387,7 @@ text-shadow: 2px 2px 0 #ff1493, 4px 4px 0 #ff69b4;
 }
 
 .game-container {
-    z-index: 1;
+    
     padding: 20px;
     box-shadow: 4px 4px 0 #ff1493;
 }
