@@ -148,7 +148,7 @@ animate();
 function updateCountdown() {
     // Set your specific anniversary date (YYYY, MM-1, DD)
     // Note: Months are 0-indexed (0 = January, 11 = December)
-    const nextAnniversary = new Date(2025, 11, 3); // December 3, 2025
+    const nextAnniversary = new Date(2026, 11, 3); // December 3, 2025
     const now = new Date();
 
 
