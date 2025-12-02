@@ -136,6 +136,7 @@ transform: scale(0.95);
 /* Mini Game */
 .game-container {
 max-width: 600px;
+z-index: 1;
 margin: 40px auto;
 padding: 30px;
 background: linear-gradient(135deg, #2d2d5f 0%, #1a1a4e 100%);
